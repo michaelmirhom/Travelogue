@@ -17,5 +17,9 @@ class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.Text, nullable=False)
     rating = db.Column(db.Integer, nullable=False)    
-
+class Destination(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(200), nullable=False)
+    country = db.Column(db.String(100), nullable=False)
+    attractions = db.Column(db.Text)
 
