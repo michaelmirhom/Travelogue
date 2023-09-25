@@ -11,7 +11,7 @@ class Trip(db.Model):
     destination = db.Column(db.String(200), nullable=False)
     start_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     end_date = db.Column(db.DateTime)
-    photos = db.Column(db.String(500))  # Comma-separated URLs or file paths
+    photos = db.Column(db.String(500))  
     description = db.Column(db.Text)
    
 
