@@ -31,4 +31,8 @@ def update_user(id):
     if not user:
         return jsonify({"error": "User not found"}), 404
 
+    data = request.json
+    if not data:
+        return jsonify({"error": "No data provided"}), 400
+
     
