@@ -43,3 +43,11 @@ def update_trip(id):
 
     db.session.commit()
     return jsonify(trip.to_dict()), 200
+@trip_routes.route('/trips/<int:id>', methods=['DELETE'])
+def delete_trip(id):
+    trip = Trip.query.get(id)
+    if not trip:
+        return jsonify({"error": "Trip not found"}), 404
+    db.session.delete(trip)
+    db.session.commit()
+    return jsonify({"message": "Trip deleted successfully"}), 200
