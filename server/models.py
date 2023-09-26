@@ -1,5 +1,6 @@
 from server.config import db
 from datetime import datetime
+from werkzeug.security import generate_password_hash
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -8,6 +9,9 @@ class User(db.Model):
     password_hash = db.Column(db.String(128))
     trips = db.relationship('Trip', backref='traveler', lazy=True)
     reviews = db.relationship('Review', backref='reviewer', lazy=True)
+
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
 
 class Trip(db.Model):
     id = db.Column(db.Integer, primary_key=True)
