@@ -30,9 +30,14 @@ def update_user(id):
     user = User.query.get(id)
     if not user:
         return jsonify({"error": "User not found"}), 404
-
     data = request.json
     if not data:
         return jsonify({"error": "No data provided"}), 400
+    
+    if 'username' in data and data['username']:
+        existing_user = User.query.filter_by(username=data['username']).first()
+        if existing_user and existing_user.id != id:
+            return jsonify({"error": "Username is already taken"}), 400
+        user.username = data['username']
 
     
