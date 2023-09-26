@@ -20,6 +20,7 @@ def create_user():
 def get_users():
     users = User.query.all()
     return jsonify([user.to_dict() for user in users])
+@user_routes.route('/users/<int:id>', methods=['GET'])
 def get_user(id):
     user = User.query.get(id)
     if not user:
@@ -48,7 +49,7 @@ def update_user(id):
 
     if 'password' in data and data['password']:
         user.set_password(data['password']) 
-        
+
     db.session.commit()
 
     return jsonify(user.to_dict()), 200

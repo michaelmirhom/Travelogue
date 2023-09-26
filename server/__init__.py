@@ -17,3 +17,6 @@ migrate = Migrate(app, db)
 
 
 from app.models import User, Trip, Review, Destination
+from app.routes import user_routes
+app.register_blueprint(user_routes.user_routes, url_prefix='/api')
+
