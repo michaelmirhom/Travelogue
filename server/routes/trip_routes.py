@@ -18,3 +18,7 @@ def create_trip():
     db.session.add(new_trip)
     db.session.commit()
     return jsonify(new_trip.to_dict()), 201
+@trip_routes.route('/trips', methods=['GET'])
+def get_trips():
+    trips = Trip.query.all()
+    return jsonify([trip.to_dict() for trip in trips])
