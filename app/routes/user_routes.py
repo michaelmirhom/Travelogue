@@ -39,12 +39,15 @@ def update_user(id):
         if existing_user and existing_user.id != id:
             return jsonify({"error": "Username is already taken"}), 400
         user.username = data['username']
-        
+
     if 'email' in data and data['email']:
         existing_user = User.query.filter_by(email=data['email']).first()
         if existing_user and existing_user.id != id:
             return jsonify({"error": "Email is already in use"}), 400
         user.email = data['email']
+        
+    if 'password' in data and data['password']:
+        user.set_password(data['password']) 
   
 
     
