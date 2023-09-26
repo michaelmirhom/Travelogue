@@ -22,3 +22,9 @@ def create_trip():
 def get_trips():
     trips = Trip.query.all()
     return jsonify([trip.to_dict() for trip in trips])
+@trip_routes.route('/trips/<int:id>', methods=['GET'])
+def get_trip(id):
+    trip = Trip.query.get(id)
+    if not trip:
+        return jsonify({"error": "Trip not found"}), 404
+    return jsonify(trip.to_dict())
