@@ -20,3 +20,8 @@ def create_user():
 def get_users():
     users = User.query.all()
     return jsonify([user.to_dict() for user in users])
+def get_user(id):
+    user = User.query.get(id)
+    if not user:
+        return jsonify({"error": "User not found"}), 404
+    return jsonify(user.to_dict())
