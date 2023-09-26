@@ -45,9 +45,13 @@ def update_user(id):
         if existing_user and existing_user.id != id:
             return jsonify({"error": "Email is already in use"}), 400
         user.email = data['email']
-        
+
     if 'password' in data and data['password']:
         user.set_password(data['password']) 
+        
+    db.session.commit()
+
+    return jsonify(user.to_dict()), 200
   
 
     
