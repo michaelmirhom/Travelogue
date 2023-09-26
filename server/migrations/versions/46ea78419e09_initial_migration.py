@@ -1,8 +1,8 @@
-"""Initial migration.
+"""initial migration
 
-Revision ID: 5f09cb05a6d4
+Revision ID: 46ea78419e09
 Revises: 
-Create Date: 2023-09-24 21:50:15.419591
+Create Date: 2023-09-26 17:21:33.843995
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '5f09cb05a6d4'
+revision = '46ea78419e09'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -42,7 +42,7 @@ def upgrade():
     sa.Column('photos', sa.String(length=500), nullable=True),
     sa.Column('description', sa.Text(), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], ['user.id'], name=op.f('fk_trip_user_id_user')),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('review',
@@ -51,8 +51,8 @@ def upgrade():
     sa.Column('rating', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('trip_id', sa.Integer(), nullable=True),
-    sa.ForeignKeyConstraint(['trip_id'], ['trip.id'], ),
-    sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
+    sa.ForeignKeyConstraint(['trip_id'], ['trip.id'], name=op.f('fk_review_trip_id_trip')),
+    sa.ForeignKeyConstraint(['user_id'], ['user.id'], name=op.f('fk_review_user_id_user')),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
