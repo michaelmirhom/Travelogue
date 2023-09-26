@@ -17,3 +17,6 @@ def create_user():
     db.session.commit()
     return jsonify(new_user.to_dict()), 201
 @user_routes.route('/users', methods=['GET'])
+def get_users():
+    users = User.query.all()
+    return jsonify([user.to_dict() for user in users])
