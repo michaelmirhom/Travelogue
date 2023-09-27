@@ -20,4 +20,10 @@ def create_review():
 def get_reviews():
     reviews = Review.query.all()
     return jsonify([review.to_dict() for review in reviews])
+@review_routes.route('/reviews/<int:id>', methods=['GET'])
+def get_review(id):
+    review = Review.query.get(id)
+    if not review:
+        return jsonify({"error": "Review not found"}), 404
+    return jsonify(review.to_dict())
 
