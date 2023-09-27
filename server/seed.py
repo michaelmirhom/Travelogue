@@ -1,4 +1,4 @@
-from config import  app,db
+from config import app, db
 from models import User, Trip, Destination, Review
 from werkzeug.security import generate_password_hash
 
@@ -33,8 +33,9 @@ def seed_data():
     db.session.add(review1)
     db.session.add(review2)
 
-    
+
     db.session.commit()
 
 if __name__ == '__main__':
-    seed_data()
+    with app.app_context():
+        seed_data()
