@@ -19,3 +19,10 @@ def create_destination():
 def get_destinations():
     destinations = Destination.query.all()
     return jsonify([destination.to_dict() for destination in destinations])
+@destination_routes.route('/destinations/<int:id>', methods=['GET'])
+def get_destination(id):
+    destination = Destination.query.get(id)
+    if not destination:
+        return jsonify({"error": "Destination not found"}), 404
+    return jsonify(destination.to_dict())
+
