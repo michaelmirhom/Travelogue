@@ -26,4 +26,15 @@ def get_review(id):
     if not review:
         return jsonify({"error": "Review not found"}), 404
     return jsonify(review.to_dict())
+@review_routes.route('/reviews/<int:id>', methods=['PUT'])
+def update_review(id):
+    review = Review.query.get(id)
+    if not review:
+        return jsonify({"error": "Review not found"}), 404
+    data = request.json
 
+    review.content = data.get('content', review.content)
+    review.rating = data.get('rating', review.rating)
+
+    db.session.commit()
+    return jsonify(review.to_dict()), 200
