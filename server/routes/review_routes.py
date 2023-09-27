@@ -38,3 +38,11 @@ def update_review(id):
 
     db.session.commit()
     return jsonify(review.to_dict()), 200
+@review_routes.route('/reviews/<int:id>', methods=['DELETE'])
+def delete_review(id):
+    review = Review.query.get(id)
+    if not review:
+        return jsonify({"error": "Review not found"}), 404
+    db.session.delete(review)
+    db.session.commit()
+    return jsonify({"message": "Review deleted successfully"}), 200
