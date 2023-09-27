@@ -25,4 +25,18 @@ def get_destination(id):
     if not destination:
         return jsonify({"error": "Destination not found"}), 404
     return jsonify(destination.to_dict())
+@destination_routes.route('/destinations/<int:id>', methods=['PUT'])
+def update_destination(id):
+    destination = Destination.query.get(id)
+    if not destination:
+        return jsonify({"error": "Destination not found"}), 404
+    data = request.json
+
+    destination.name = data.get('name', destination.name)
+    destination.country = data.get('country', destination.country)
+    destination.attractions = data.get('attractions', destination.attractions)
+
+    db.session.commit()
+    return jsonify(destination.to_dict()), 200
+
 
