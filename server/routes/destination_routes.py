@@ -15,3 +15,7 @@ def create_destination():
     db.session.add(new_destination)
     db.session.commit()
     return jsonify(new_destination.to_dict()), 201
+@destination_routes.route('/destinations', methods=['GET'])
+def get_destinations():
+    destinations = Destination.query.all()
+    return jsonify([destination.to_dict() for destination in destinations])
