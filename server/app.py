@@ -11,9 +11,7 @@ app.register_blueprint(trip_routes, url_prefix='/api')
 app.register_blueprint(review_routes, url_prefix='/api')
 app.register_blueprint(destination_routes, url_prefix='/api')
 app.register_blueprint(user_routes, url_prefix='/api')
-@app.route('/')
-def hello():
-    return "Hello, World!"
+
 
 
 if __name__ == "__main__":
