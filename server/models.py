@@ -13,6 +13,13 @@ class User(db.Model):
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'email': self.email
+        }
+
 class Trip(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     destination = db.Column(db.String(200), nullable=False)
@@ -23,6 +30,17 @@ class Trip(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     reviews = db.relationship('Review', backref='trip', lazy=True)
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'destination': self.destination,
+            'start_date': self.start_date,
+            'end_date': self.end_date,
+            'photos': self.photos,
+            'description': self.description,
+            'user_id': self.user_id
+        }
+
 class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.Text, nullable=False)
@@ -31,6 +49,15 @@ class Review(db.Model):
     trip_id = db.Column(db.Integer, db.ForeignKey('trip.id'))
     destination_id = db.Column(db.Integer, db.ForeignKey('destination.id'))
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'content': self.content,
+            'rating': self.rating,
+            'user_id': self.user_id,
+            'trip_id': self.trip_id,
+            'destination_id': self.destination_id
+        }
 
 class Destination(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -38,6 +65,15 @@ class Destination(db.Model):
     country = db.Column(db.String(100), nullable=False)
     attractions = db.Column(db.Text)
     reviews = db.relationship('Review', backref='destination', lazy=True)
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'country': self.country,
+            'attractions': self.attractions
+        }
+
 
 
 
