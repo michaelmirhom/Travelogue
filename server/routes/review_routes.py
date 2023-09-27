@@ -16,3 +16,8 @@ def create_review():
     db.session.add(new_review)
     db.session.commit()
     return jsonify(new_review.to_dict()), 201
+@review_routes.route('/reviews', methods=['GET'])
+def get_reviews():
+    reviews = Review.query.all()
+    return jsonify([review.to_dict() for review in reviews])
+
