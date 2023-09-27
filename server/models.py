@@ -29,6 +29,8 @@ class Review(db.Model):
     rating = db.Column(db.Integer, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     trip_id = db.Column(db.Integer, db.ForeignKey('trip.id'))
+    destination_id = db.Column(db.Integer, db.ForeignKey('destination.id'))
+
 
 class Destination(db.Model):
     id = db.Column(db.Integer, primary_key=True)
