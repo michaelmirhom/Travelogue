@@ -1,4 +1,4 @@
-from config import db
+from config import  app,db
 from models import User, Trip, Destination, Review
 from werkzeug.security import generate_password_hash
 
