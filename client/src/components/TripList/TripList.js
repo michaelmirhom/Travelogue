@@ -18,3 +18,5 @@ const TripList = () => {
             .then(data => {
                 
                 setTrips(data);
+                setIsLoading(false);
+            })
