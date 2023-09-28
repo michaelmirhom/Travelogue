@@ -28,6 +28,11 @@ const DestinationList = () => {
                 setIsLoading(false);
             });
     }, []); 
-                
+        
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
+            
          
 
