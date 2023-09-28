@@ -25,6 +25,9 @@ const DestinationList = () => {
             .catch(err => {
               
                 setError(err.message);
+                setIsLoading(false);
+            });
+    }, []); 
                 
          
 
