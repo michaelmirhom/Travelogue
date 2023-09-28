@@ -45,6 +45,15 @@ const DestinationDetails = () => {
         return <div>Destination not found.</div>;
     }
 
+ return (
+    <div>
+        <h2>{destination.name}</h2>
+        <p>Country: {destination.country}</p>
+   
+   
+    </div>
+);
+}
                
              
             
