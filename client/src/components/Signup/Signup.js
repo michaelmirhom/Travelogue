@@ -44,3 +44,34 @@ const Signup = () => {
             setErrorMessage("There was an error during signup: " + error.message);
         });
     };
+    return (
+        <div>
+            <h2>Signup Page</h2>
+          
+            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+            <form onSubmit={handleSignup}>
+               
+                <input
+                    type="text"
+                    placeholder="Username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                
+                <button type="submit">Signup</button>
+            </form>
+        </div>
+    );
+}
