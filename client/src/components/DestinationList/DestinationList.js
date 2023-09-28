@@ -14,6 +14,13 @@ const DestinationList = () => {
                     throw new Error('Failed to fetch destinations');
                 }
                
-                return response.json();
-                
+                return response.json()
             })
+            .then(data => {
+                
+                setDestinations(data);
+                // Update the loading state to false since data is fetched
+                setIsLoading(false);
+            })
+         
+
