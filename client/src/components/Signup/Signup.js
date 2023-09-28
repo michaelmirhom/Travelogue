@@ -10,6 +10,9 @@ const Signup = () => {
     const handleSignup = (e) => {
        
         e.preventDefault();
+       
+       if (!username || !email || !password) {
+        setErrorMessage('Please provide a username, email, and password.');
+        return;
 
-        
         }
