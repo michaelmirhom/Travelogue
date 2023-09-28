@@ -11,5 +11,7 @@ const DestinationDetails = () => {
         
         fetch(`http://localhost:5555/api/destinations/${id}`)
             .then(response => {
-                // Check if the API call was successful, if not throw an error
-             
+               
+                if (!response.ok) {
+                    throw new Error('Failed to fetch destination details');
+            
