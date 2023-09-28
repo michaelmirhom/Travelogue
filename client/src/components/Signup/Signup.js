@@ -7,3 +7,9 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const history = useHistory();
+    const handleSignup = (e) => {
+       
+        e.preventDefault();
+
+        
+        }
