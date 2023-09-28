@@ -25,4 +25,4 @@ const TripList = () => {
                 setError(err.message);
                 
                 setIsLoading(false);
-            })
+            });
