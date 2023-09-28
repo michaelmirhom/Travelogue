@@ -20,3 +20,9 @@ const TripList = () => {
                 setTrips(data);
                 setIsLoading(false);
             })
+            .catch(err => {
+               
+                setError(err.message);
+                
+                setIsLoading(false);
+            })
