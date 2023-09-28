@@ -30,3 +30,12 @@ const Signup = () => {
             }
             return response.json(); 
         })
+        .then((data) => {
+            
+            if (data.success) {
+                history.push('/login');
+            } else {
+               
+                setErrorMessage(data.message || "Signup failed.");
+            }
+        })
