@@ -19,8 +19,12 @@ const DestinationList = () => {
             .then(data => {
                 
                 setDestinations(data);
-                // Update the loading state to false since data is fetched
+                
                 setIsLoading(false);
             })
+            .catch(err => {
+              
+                setError(err.message);
+                
          
 
