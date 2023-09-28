@@ -27,3 +27,6 @@ const TripList = () => {
                 setIsLoading(false);
             });
         },[]);
+        if (isLoading) {
+            return <div>Loading...</div>;
+        }
