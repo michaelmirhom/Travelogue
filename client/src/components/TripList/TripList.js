@@ -15,3 +15,6 @@ const TripList = () => {
                 
                 return response.json();
             })
+            .then(data => {
+                
+                setTrips(data);
