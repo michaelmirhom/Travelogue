@@ -27,6 +27,10 @@ const DestinationDetails = () => {
             .catch(err => {
                    
                    setError(err.message);
+                      
+                       setIsLoading(false);
+                    });
+                     
                
              
             
