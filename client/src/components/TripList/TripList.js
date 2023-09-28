@@ -26,3 +26,4 @@ const TripList = () => {
                 
                 setIsLoading(false);
             });
+        },[]);
