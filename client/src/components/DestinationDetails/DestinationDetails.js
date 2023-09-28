@@ -30,6 +30,8 @@ const DestinationDetails = () => {
                       
                        setIsLoading(false);
                     });
+                }, [id]); 
+
                      
                
              
