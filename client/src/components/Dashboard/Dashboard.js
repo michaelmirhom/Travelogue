@@ -14,4 +14,30 @@ const Dashboard = () => {
             .then(data => setDestinations(data)) 
             .catch(err => console.error('Error fetching destinations:', err)); 
     }, []); 
-   
+    return (
+        <div>
+            <h2>Dashboard</h2>
+            <p>Welcome to the Travelogue Dashboard!</p>
+
+            <div>
+                <h3>Your Trips</h3>
+               
+                <ul>
+                    {trips.map(trip => (
+                        <li key={trip.id}>{trip.destination}</li>
+                    ))}
+                </ul>
+            </div>
+
+            <div>
+                <h3>Your Destinations</h3>
+                
+                <ul>
+                    {destinations.map(destination => (
+                        <li key={destination.id}>{destination.name} - {destination.country}</li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    );
+}
