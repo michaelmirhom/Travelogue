@@ -21,14 +21,9 @@ const DestinationDetails = () => {
             .then(data => {
               
                 setDestination(data);
-                // Update the loading state to false since data is fetched
+               
                 setIsLoading(false);
             })
             .catch(err => {
-                // Update the error state with the error message
-                setError(err.message);
-                // Update the loading state to false since there was an error fetching data
-                setIsLoading(false);
-            });
              
             
