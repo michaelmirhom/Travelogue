@@ -40,6 +40,11 @@ const DestinationDetails = () => {
     if (error) {
         return <div>Error: {error}</div>;
     }         
+    
+     if (!destination) {
+        return <div>Destination not found.</div>;
+    }
+
                
              
             
