@@ -31,6 +31,10 @@ const DestinationDetails = () => {
                        setIsLoading(false);
                     });
                 }, [id]); 
+              
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
 
                      
                
