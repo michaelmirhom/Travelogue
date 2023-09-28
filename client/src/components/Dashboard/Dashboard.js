@@ -9,3 +9,9 @@ const Dashboard = () => {
             .then(response => response.json()) 
             .then(data => setTrips(data)) 
             .catch(err => console.error('Error fetching trips:', err)); 
+            fetch('http://localhost:5555/api/destinations') 
+            .then(response => response.json())
+            .then(data => setDestinations(data)) 
+            .catch(err => console.error('Error fetching destinations:', err)); 
+    }, []); 
+   
