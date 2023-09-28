@@ -36,3 +36,18 @@ const TripList = () => {
     if (error) {
         return <div>Error: {error}</div>;
     }
+    return (
+        <div>
+            <h2>Trip List</h2>
+          
+            {trips.map(trip => (
+                <div key={trip.id}>
+                    <h3>{trip.destination}</h3>
+                    <p>{trip.description}</p>
+                 
+                    <small>From: {new Date(trip.start_date).toLocaleDateString()} To: {new Date(trip.end_date).toLocaleDateString()}</small>
+                </div>
+            ))}
+        </div>
+    );
+}
