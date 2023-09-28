@@ -14,4 +14,9 @@ const DestinationDetails = () => {
                
                 if (!response.ok) {
                     throw new Error('Failed to fetch destination details');
+                }
+               
+                return response.json();
+            })
+             
             
