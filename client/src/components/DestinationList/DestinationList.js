@@ -12,5 +12,8 @@ const DestinationList = () => {
                
                 if (!response.ok) {
                     throw new Error('Failed to fetch destinations');
+                }
+               
+                return response.json();
                 
             })
