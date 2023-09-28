@@ -39,4 +39,8 @@ const Signup = () => {
                 setErrorMessage(data.message || "Signup failed.");
             }
         })
+        .catch((error) => {
         
+            setErrorMessage("There was an error during signup: " + error.message);
+        });
+    };
