@@ -7,5 +7,10 @@ const DestinationList = () => {
     useEffect(() => {
         
         fetch('http://localhost:5555/api/destinations') 
-            
+
+            .then(response => {
+               
+                if (!response.ok) {
+                    throw new Error('Failed to fetch destinations');
+                
             })
