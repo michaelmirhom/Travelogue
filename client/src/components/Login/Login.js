@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Change from useHistory to useNavigate
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     
-    const history = useHistory();
+    const navigate = useNavigate(); // Change from useHistory to useNavigate
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -33,7 +33,7 @@ const Login = () => {
         .then((data) => {
             if (data.token) {
                 localStorage.setItem('authToken', data.token);
-                history.push('/dashboard'); // redirecting to dashboard
+                navigate('/dashboard'); // Use navigate instead of history.push
             } else {
                 setErrorMessage(data.message || "Login failed.");
             }
@@ -67,4 +67,5 @@ const Login = () => {
 }
 
 export default Login;
+
 
