@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 const Signup = () => {
     const [username, setUsername] = useState('');
@@ -7,12 +7,12 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     
-    const history = useHistory();
+    const navigate = useNavigate(); 
 
     const handleSignup = (e) => {
         e.preventDefault();
 
-        // Form validation
+      
         if (!username || !email || !password) {
             setErrorMessage('Please provide a username, email, and password.');
             return;
@@ -33,7 +33,7 @@ const Signup = () => {
         })
         .then((data) => {
             if (data.success) {
-                history.push('/login'); // redirecting to login
+                navigate('/login'); 
             } else {
                 setErrorMessage(data.message || "Signup failed.");
             }
@@ -73,3 +73,4 @@ const Signup = () => {
 }
 
 export default Signup;
+
