@@ -19,3 +19,12 @@ function App() {
           <Link to="/trips" style={{ margin: '0 1rem' }}>Trips</Link>
           <Link to="/destinations" style={{ margin: '0 1rem' }}>Destinations</Link>
         </nav>
+        <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/dashboard" component={Dashboard} />
+         
+
+
+
+
+
