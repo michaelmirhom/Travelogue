@@ -24,8 +24,11 @@ function App() {
           <Route path="/dashboard" component={Dashboard} />
            
            <Route path="/trips" exact component={TripList} />
-          
-
+           <Route path="/trip/:id" component={TripDetails} />
+          <Route path="/destinations" exact component={DestinationList} />
+         
+          <Route path="/destination/:id" component={DestinationDetails} />
+   
 
 export default App;
 
