@@ -24,7 +24,8 @@ function App() {
           <Route path="/dashboard" component={Dashboard} />
            
            <Route path="/trips" exact component={TripList} />
-     
+          
+
 
 export default App;
 
