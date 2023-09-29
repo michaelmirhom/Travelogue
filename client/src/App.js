@@ -13,7 +13,6 @@ function App() {
   return (
     <Router>
       <div>
-       
         <nav style={{ padding: '1rem', borderBottom: '1px solid gray' }}>
           <Link to="/dashboard" style={{ margin: '0 1rem' }}>Dashboard</Link>
           <Link to="/login" style={{ margin: '0 1rem' }}>Login</Link>
@@ -22,24 +21,24 @@ function App() {
           <Link to="/destinations" style={{ margin: '0 1rem' }}>Destinations</Link>
         </nav>
 
-      
-        <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/trips" exact component={TripList} />
-          <Route path="/trip/:id" component={TripDetails} />
-          <Route path="/destinations" exact component={DestinationList} />
-          <Route path="/destination/:id" component={DestinationDetails} />
-          <Route path="/" exact component={Dashboard} />
-          <Redirect to="/" /> 
-        </Switch>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/trips" element={<TripList />} />
+          <Route path="/trip/:id" element={<TripDetails />} />
+          <Route path="/destinations" element={<DestinationList />} />
+          <Route path="/destination/:id" element={<DestinationDetails />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </div>
     </Router>
   );
 }
 
 export default App;
+
 
 
 
