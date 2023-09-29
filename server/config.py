@@ -3,8 +3,10 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
-
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app, origins=["http://localhost:3000"])
+
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:////home/mirhom/phase5/Travelogue/server/instance/travelogue.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.json.compact = False
@@ -15,4 +17,4 @@ metadata = MetaData(naming_convention={
 db = SQLAlchemy(app, metadata=metadata)
 migrate = Migrate(app, db)
 
-CORS(app)
+

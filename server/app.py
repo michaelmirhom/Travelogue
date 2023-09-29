@@ -1,5 +1,6 @@
 from config import app, db, migrate 
 
+
 from models import User, Trip, Review, Destination
 from routes.trip_routes import trip_routes
 from routes.review_routes import review_routes
