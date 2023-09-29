@@ -28,6 +28,9 @@ function App() {
           <Route path="/destinations" exact component={DestinationList} />
          
           <Route path="/destination/:id" component={DestinationDetails} />
+                
+                 <Route path="/" exact component={Dashboard} />
+  
    
 
 export default App;
