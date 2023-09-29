@@ -7,6 +7,7 @@ import TripList from './components/TripList/TripList';
 import TripDetails from './components/TripDetails/TripDetails';
 import DestinationList from './components/DestinationList/DestinationList';
 import DestinationDetails from './components/DestinationDetails/DestinationDetails';
+
 function App() {
   return (
     <Router>
@@ -19,22 +20,25 @@ function App() {
           <Link to="/trips" style={{ margin: '0 1rem' }}>Trips</Link>
           <Link to="/destinations" style={{ margin: '0 1rem' }}>Destinations</Link>
         </nav>
-        <Route path="/login" component={Login} />
+
+      
+        <Switch>
+          <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/dashboard" component={Dashboard} />
-           
-           <Route path="/trips" exact component={TripList} />
-           <Route path="/trip/:id" component={TripDetails} />
+          <Route path="/trips" exact component={TripList} />
+          <Route path="/trip/:id" component={TripDetails} />
           <Route path="/destinations" exact component={DestinationList} />
-         
           <Route path="/destination/:id" component={DestinationDetails} />
-                
-                 <Route path="/" exact component={Dashboard} />
-  
-   
+          <Route path="/" exact component={Dashboard} />
+          <Redirect to="/" /> 
+        </Switch>
+      </div>
+    </Router>
+  );
+}
 
 export default App;
-
 
 
 
