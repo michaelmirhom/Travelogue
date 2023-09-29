@@ -52,6 +52,21 @@ def update_user(id):
 
     if 'password' in data and data['password']:
         user.set_password(data['password'])  
+@user_routes.route('/users/signup', methods=['POST'])
+def signup_user():
+    data = request.get_json()
+    existing_user = User.query.filter_by(email=data['email']).first()
+    if existing_user:
+        return jsonify({"error": "Email already in use"}), 400
+    new_user = User(
+        username=data['username'],
+        email=data['email']
+    )
+    new_user.set_password(data['password'])
+    db.session.add(new_user)
+    db.session.commit()
+    return jsonify(new_user.to_dict()), 201
+   
 
     db.session.commit()
 
