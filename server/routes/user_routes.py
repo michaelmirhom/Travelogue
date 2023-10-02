@@ -90,14 +90,14 @@ def signup_user():
 @user_routes.route('/users/login', methods=['POST'])
 def login_user():
     data = request.get_json()
-    print(data)
     
     if not data or 'email' not in data or 'password' not in data:
         return jsonify({"success": False, "message": "Email and password are required"}), 400
 
     user = User.query.filter_by(email=data['email']).first()
     if user and check_password_hash(user.password_hash, data['password']):
-        return jsonify({"success": True, "message": "Login successful"}), 200
+     return jsonify({"success": True, "message": "Login successful", "user": user.to_dict()}), 200
+
     else:
         return jsonify({"success": False, "message": "Invalid email or password"}), 401
     
