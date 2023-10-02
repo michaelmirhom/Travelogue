@@ -35,6 +35,31 @@ const TripDetails = () => {
                 
                     setLoading(false);
                 });
-        
+       
+    }, [id]);
+    
+    
+    if (loading) return <div>Loading...</div>;
+    
+    
+    if (error) return <div>Error: {error}</div>;
+    
+    
+    if (!trip) return <div>No trip details found.</div>;
+
+    return (
+        <div>
+            
+            <h2>{trip.destination}</h2>
+            <p>{trip.description}</p>
+            <p><strong>Start Date:</strong> {new Date(trip.start_date).toLocaleDateString()}</p>
+            <p><strong>End Date:</strong> {trip.end_date ? new Date(trip.end_date).toLocaleDateString() : 'Ongoing'}</p>
+            <p><strong>Photos:</strong> {trip.photos}</p>
+           
+        </div>
+    );
+}
+
+export default TripDetails;
     
     
