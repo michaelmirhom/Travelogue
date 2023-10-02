@@ -87,6 +87,12 @@ def signup_user():
     db.session.commit()
 
     return jsonify({"success": True, "data": new_user.to_dict()}), 201
+@user_routes.route('/users/login', methods=['POST'])
+def login_user():
+    data = request.get_json()
+    user = User.query.filter_by(email=data['email']).first()
+    
+  
 
 
   
