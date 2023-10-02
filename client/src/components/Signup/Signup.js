@@ -31,13 +31,13 @@ const Signup = () => {
             }
             return response.json();
         })
-        .then((response) => {
-            if (response.data.success) {
+        .then((data) => {
+            if (data.success) {
                 navigate('/login'); 
             } else {
-                setErrorMessage(response.data.message || "Signup failed.");
+                setErrorMessage(data.message || "Signup failed.");
             }
-        })}
+        })};
         
 
     return (
