@@ -91,6 +91,9 @@ def signup_user():
 def login_user():
     data = request.get_json()
     user = User.query.filter_by(email=data['email']).first()
+    if user and check_password_hash(user.password_hash, data['password']):
+    
+        
     
   
 
