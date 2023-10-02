@@ -25,7 +25,7 @@ const Dashboard = () => {
     return (
         <div>
             <h2>Dashboard</h2>
-            {user && <p>Welcome back, {user.username}!</p>}  // Personalized greeting
+            {user && <p>Welcome back, {user.username}!</p>}  
             <p>Welcome to the Travelogue Dashboard!</p>
 
             <div>

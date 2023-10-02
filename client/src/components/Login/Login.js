@@ -31,9 +31,10 @@ const Login = () => {
             return response.json();
         })
         .then((data) => {
-            if (data.success) {  // Assuming backend sends a "success" key in the response
-                setUser(data.user);  // Set user data after successful login
-                navigate('/dashboard');  // Navigate to dashboard page after login
+            if (data.success) {  
+                setUser(data.user);  
+                localStorage.setItem('user', JSON.stringify(data.user)); 
+                navigate('/dashboard'); 
             } else {
                 setErrorMessage(data.message || "Login failed.");
             }
