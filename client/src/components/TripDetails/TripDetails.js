@@ -5,4 +5,6 @@ const TripDetails = () => {
    
     const [trip, setTrip] = useState(null);
     
-  
+   
+    const [loading, setLoading] = useState(true);
+    
