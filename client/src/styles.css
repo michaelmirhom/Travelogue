@@ -69,4 +69,15 @@ form button {
 form button:hover {
     background-color: #555;
 }
+.list-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.list-item h3 {
+    margin-top: 0;
+}
+
 
