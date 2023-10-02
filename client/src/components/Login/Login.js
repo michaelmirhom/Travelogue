@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
-const [user, setUser] = useState(null);
-
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    
-    const navigate = useNavigate(); 
+    const [user, setUser] = useState(null);  
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
 
-        // Form validation
+        
         if (!email || !password) {
             setErrorMessage('Please provide both email and password.');
             return;
@@ -33,9 +31,9 @@ const Login = () => {
             return response.json();
         })
         .then((data) => {
-            if (data.token) {
-                localStorage.setItem('authToken', data.token);
-                navigate('/dashboard'); // Use navigate instead of history.push
+            if (data.success) {  // Assuming backend sends a "success" key in the response
+                setUser(data.user);  // Set user data after successful login
+                navigate('/dashboard');  // Navigate to dashboard page after login
             } else {
                 setErrorMessage(data.message || "Login failed.");
             }
