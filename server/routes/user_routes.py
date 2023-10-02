@@ -1,6 +1,8 @@
 from flask import Blueprint, jsonify, request
+from werkzeug.security import check_password_hash
 from config import db
 from models import User
+
 
 user_routes = Blueprint('user_routes', __name__)
 
