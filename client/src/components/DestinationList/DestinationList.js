@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const DestinationList = () => {
     const [destinations, setDestinations] = useState([]);
@@ -6,7 +7,7 @@ const DestinationList = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        // Fetch destinations from your API
+      
         fetch('http://localhost:5555/api/destinations') 
             .then(response => {
                 if (!response.ok) {
@@ -37,7 +38,8 @@ const DestinationList = () => {
             <h2>Destinations</h2>
             {destinations.map(destination => (
                 <div key={destination.id}>
-                    <h3>{destination.name}</h3>
+                    {/* Wrap the destination name with a Link */}
+                    <h3><Link to={`/destination/${destination.id}`}>{destination.name}</Link></h3>
                     <p>Country: {destination.country}</p>
                     <p>Attractions: {destination.attractions}</p>
                 </div>
@@ -47,6 +49,7 @@ const DestinationList = () => {
 }
 
 export default DestinationList;
+
 
     
             

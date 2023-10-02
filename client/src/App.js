@@ -9,6 +9,9 @@ import TripDetails from './components/TripDetails/TripDetails';
 import DestinationList from './components/DestinationList/DestinationList';
 import DestinationDetails from './components/DestinationDetails/DestinationDetails';
 
+import './styles.css';
+
+
 function App() {
   return (
     <Router>
@@ -31,6 +34,8 @@ function App() {
           <Route path="/destination/:id" element={<DestinationDetails />} />
           <Route path="/" element={<Dashboard />} />
           <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/destination/:id" element={<DestinationDetails />} />
+
         </Routes>
       </div>
     </Router>
