@@ -7,4 +7,8 @@ const TripDetails = () => {
     
    
     const [loading, setLoading] = useState(true);
+        
+        const [error, setError] = useState(null);
+    
+   
     
