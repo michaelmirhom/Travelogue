@@ -10,5 +10,7 @@ const TripDetails = () => {
         
         const [error, setError] = useState(null);
     
-   
+       
+        const { id } = useParams();
+    
     
