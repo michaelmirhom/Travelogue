@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Change from useHistory to useNavigate
+import { useNavigate } from 'react-router-dom'; 
+const [user, setUser] = useState(null);
+
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     
-    const navigate = useNavigate(); // Change from useHistory to useNavigate
+    const navigate = useNavigate(); 
 
     const handleLogin = (e) => {
         e.preventDefault();
