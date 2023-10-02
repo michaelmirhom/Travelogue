@@ -3,18 +3,20 @@ import React, { useEffect, useState } from 'react';
 const Dashboard = () => {
     const [trips, setTrips] = useState([]);
     const [destinations, setDestinations] = useState([]);
-    const [user, setUser] = useState(null);  
-
+    const [user, setUser] = useState(null);  // State to store logged-in user's data
 
     useEffect(() => {
-        
-        fetch('http://localhost:5555/api/trips') 
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser)); 
+        }
+
+        fetch('http://localhost:5555/api/trips')
             .then(response => response.json())
             .then(data => setTrips(data))
             .catch(err => console.error('Error fetching trips:', err));
 
-       
-        fetch('http://localhost:5555/api/destinations') 
+        fetch('http://localhost:5555/api/destinations')
             .then(response => response.json())
             .then(data => setDestinations(data))
             .catch(err => console.error('Error fetching destinations:', err));
@@ -23,6 +25,7 @@ const Dashboard = () => {
     return (
         <div>
             <h2>Dashboard</h2>
+            {user && <p>Welcome back, {user.username}!</p>}  // Personalized greeting
             <p>Welcome to the Travelogue Dashboard!</p>
 
             <div>
