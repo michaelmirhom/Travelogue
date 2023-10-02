@@ -7,14 +7,20 @@ user_routes = Blueprint('user_routes', __name__)
 @user_routes.route('/users', methods=['POST'])
 def create_user():
     data = request.get_json()
+
+    existing_user_by_email = User.query.filter_by(email=data['email']).first()
+    if existing_user_by_email:
+        return jsonify({"success": False, "error": "Email already in use"}), 400
+
     new_user = User(
         username=data['username'],
         email=data['email'],
-        password_hash=data['password_hash']  
+        password_hash=data['password_hash'] 
     )
     db.session.add(new_user)
     db.session.commit()
-    return jsonify(new_user.to_dict()), 201
+
+    return jsonify({"success": True, "data": new_user.to_dict()}), 201
 
 @user_routes.route('/users', methods=['GET'])
 def get_users():
@@ -59,9 +65,16 @@ def update_user(id):
 @user_routes.route('/users/signup', methods=['POST'])
 def signup_user():
     data = request.get_json()
-    existing_user = User.query.filter_by(email=data['email']).first()
-    if existing_user:
-        return jsonify({"error": "Email already in use"}), 400
+
+   
+    existing_user_by_username = User.query.filter_by(username=data['username']).first()
+    if existing_user_by_username:
+        return jsonify({"success": False, "error": "Username already in use"}), 400
+
+ 
+    existing_user_by_email = User.query.filter_by(email=data['email']).first()
+    if existing_user_by_email:
+        return jsonify({"success": False, "error": "Email already in use"}), 400
 
     new_user = User(
         username=data['username'],
@@ -70,7 +83,8 @@ def signup_user():
     new_user.set_password(data['password'])
     db.session.add(new_user)
     db.session.commit()
-    return jsonify(new_user.to_dict()), 201
+
+    return jsonify({"success": True, "data": new_user.to_dict()}), 201
 
 
   
