@@ -12,7 +12,6 @@ Travelogue is a comprehensive web application tailored for travel enthusiasts. T
   * Frontend Setup
   
 * File Structure
-* API Endpoints
 * Database Schema
 * Contributing
 * Acknowledgments
@@ -51,7 +50,7 @@ Travelogue is a comprehensive web application tailored for travel enthusiasts. T
    npm install
  3.   Start the Development Server:
    npm start
-   
+
 
 
 # File Structure
