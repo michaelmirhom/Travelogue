@@ -4,28 +4,28 @@ Travelogue is a comprehensive web application tailored for travel enthusiasts. T
 
 # Table of Contents
 
-1- Features
-2- Tech Stack
-3- Installation & Setup
-4- File Structure
-5- API Endpoints
-6- Database Schema
-7- Contributing
-8- Acknowledgments
-9- License
+1. Features
+2. Tech Stack
+3. Installation & Setup
+4. File Structure
+5. API Endpoints
+6. Database Schema
+7. Contributing
+8. Acknowledgments
+9. License
 
 # Features
 
-1- User Management: Robust user authentication and profile management.
-2- Interactive Dashboard: Users can easily visualize and manage their trips.
-3- CRUD Operations: Users have the freedom to manage their trips, reviews, and favorite destinations.
-4- Responsive Design: The application is accessible on all devices, from mobiles to desktops.
+* User Management: Robust user authentication and profile management.
+* Interactive Dashboard: Users can easily visualize and manage their trips.
+* CRUD Operations: Users have the freedom to manage their trips, reviews, and favorite destinations.
+* Responsive Design: The application is accessible on all devices, from mobiles to desktops.
 
 # Tech Stack
 
-1- Backend: Flask
-2- Database: SQLite with SQLAlchemy ORM
-3- Authentication: Flask-Login
+1. Backend: Flask
+2. Database: SQLite with SQLAlchemy ORM
+3. Authentication: Flask-Login
 
 # Installation & Setup
 
