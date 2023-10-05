@@ -4,15 +4,19 @@ Travelogue is a comprehensive web application tailored for travel enthusiasts. T
 
 # Table of Contents
 
-1. Features
-2. Tech Stack
-3. Installation & Setup
-4. File Structure
-5. API Endpoints
-6. Database Schema
-7. Contributing
-8. Acknowledgments
-9. License
+* Features
+* Tech Stack
+* Installation & Setup
+
+  * Backend Setup
+  * Frontend Setup
+  
+* File Structure
+* API Endpoints
+* Database Schema
+* Contributing
+* Acknowledgments
+* License
 
 # Features
 
@@ -23,9 +27,9 @@ Travelogue is a comprehensive web application tailored for travel enthusiasts. T
 
 # Tech Stack
 
-1. Backend: Flask
-2. Database: SQLite with SQLAlchemy ORM
-3. Authentication: Flask-Login
+* Backend: Flask
+* Database: SQLite with SQLAlchemy ORM
+* Authentication: Flask-Login
 
 # Installation & Setup
 
@@ -39,6 +43,16 @@ Travelogue is a comprehensive web application tailored for travel enthusiasts. T
 * pipenv install
 * pipenv shell
 * flask run
+
+# Frontend Setup 
+ 1. Navigate to the Frontend Directory:
+  cd Client
+ 2.  Install Dependencies:
+   npm install
+ 3.   Start the Development Server:
+   npm start
+   
+
 
 # File Structure
 
