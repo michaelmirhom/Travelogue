@@ -29,30 +29,30 @@ Travelogue is a comprehensive web application tailored for travel enthusiasts. T
 
 # Installation & Setup
 
-# Clone the Repository
+* Clone the Repository
 
   git clone <git@github.com>:michaelmirhom/Travelogue.git
   cd travelogue
 
 # Backend Setup
 
-  pipenv install
-  pipenv shell
-  flask run
+* pipenv install
+* pipenv shell
+* flask run
 
 # File Structure
 
-Backend
-config.py: Contains configuration settings.
-models.py: Defines the database models.
-routes: Houses the API endpoint definitions.
+* Backend
+  config.py: Contains configuration settings.
+  models.py: Defines the database models.
+  routes: Houses the API endpoint definitions.
 
 # Database Schema
 
-User: Contains basic user data.
-Trip: Stores details of each trip.
-Review: Consists of reviews associated with trips or destinations.
-Destination: Lists travel destinations.
+* User: Contains basic user data.
+* Trip: Stores details of each trip.
+* Review: Consists of reviews associated with trips or destinations.
+* Destination: Lists travel destinations.
 
 # Contributing
 
