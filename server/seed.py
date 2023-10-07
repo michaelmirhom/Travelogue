@@ -12,15 +12,15 @@ def seed_data():
     user2 = User(username='janeDoe', email='jane@example.com', password_hash=generate_password_hash('password456'))
 
     
-    dest1 = Destination(name='Paris', country='France', attractions='Eiffel Tower, Louvre Museum')
+    dest1 = Destination(name='Giza', country='Egypt', attractions='Pyramids, River Nile')
     dest2 = Destination(name='Tokyo', country='Japan', attractions='Tokyo Tower, Senso-ji Temple')
 
     
-    trip1 = Trip(destination='Paris', user_id=1)
+    trip1 = Trip(destination='Giza', user_id=1)
     trip2 = Trip(destination='Tokyo', user_id=2)
 
     
-    review1 = Review(content='Loved Paris!', rating=5, user_id=1, trip_id=1, destination_id=1)
+    review1 = Review(content='Loved Giza!', rating=5, user_id=1, trip_id=1, destination_id=1)
     review2 = Review(content='Tokyo was bustling and vibrant!', rating=4, user_id=2, trip_id=2, destination_id=2)
 
     

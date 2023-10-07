@@ -64,6 +64,7 @@ class Destination(db.Model):
     name = db.Column(db.String(200), nullable=False)
     country = db.Column(db.String(100), nullable=False)
     attractions = db.Column(db.Text)
+    image_url = db.Column(db.String, nullable=True)  
     reviews = db.relationship('Review', backref='destination', lazy=True)
 
     def to_dict(self):
@@ -71,7 +72,8 @@ class Destination(db.Model):
             'id': self.id,
             'name': self.name,
             'country': self.country,
-            'attractions': self.attractions
+            'attractions': self.attractions,
+            'image_url': self.image_url  
         }
 
 
