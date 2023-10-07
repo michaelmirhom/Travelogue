@@ -81,7 +81,6 @@ form button:hover {
     margin-top: 0;
 }
 
-
 .destination-details {
     height: 100vh;
     background-position: center;
@@ -94,23 +93,23 @@ form button:hover {
 }
 
 .destination-details-text {
-    background-color: rgba(255, 255, 255, 0.7); /* semi-transparent white background */
-    padding: 15px;
-    border-radius: 8px;
-    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
     text-align: center;
 }
 
 .destination-details h2, .destination-details p {
     margin: 10px 0;
-    color: #333; /* Dark text color */
+    color: #FFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .destination-details h2 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
 }
-
 
 
 

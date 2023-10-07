@@ -13,7 +13,7 @@ def seed_data():
 
     
     dest1 = Destination(name='Giza', country='Egypt', attractions='Pyramids, River Nile', image_url='https://i.pinimg.com/originals/9d/bb/e8/9dbbe803857060a7f3d17350302c75a4.jpg')
-    dest2 = Destination(name='Tokyo', country='Japan', attractions='Tokyo Tower, Senso-ji Temple')
+    dest2 = Destination(name='Tokyo', country='Japan', attractions='Tokyo Tower, Senso-ji Temple',image_url='https://d1bv4heaa2n05k.cloudfront.net/user-images/1471601551497/shutterstock-194861771_main_1471601557463.jpeg')
 
     
     trip1 = Trip(destination='Giza', user_id=1)
