@@ -1,10 +1,10 @@
-
-body {
+body, html {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    height: 100%;
 }
 
 .container {
@@ -24,7 +24,6 @@ p {
     margin-bottom: 20px;
 }
 
-
 nav {
     background-color: #333;
     padding: 10px 0;
@@ -41,6 +40,7 @@ nav a {
 nav a:hover {
     background-color: #555;
 }
+
 form {
     max-width: 400px;
     margin: 20px auto;
@@ -69,6 +69,7 @@ form button {
 form button:hover {
     background-color: #555;
 }
+
 .list-item {
     padding: 15px;
     margin-bottom: 10px;
@@ -79,15 +80,18 @@ form button:hover {
 .list-item h3 {
     margin-top: 0;
 }
+
 .destination-details {
     min-height: 100vh;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 
 
 
