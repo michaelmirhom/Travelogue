@@ -39,16 +39,16 @@ const DestinationDetails = () => {
     }
 
     return (
-        <div style={{ backgroundImage: `url(${destination.image_url})`, backgroundSize: 'cover', padding: '20px' }}>
+        <div className="destination-details" style={{ backgroundImage: `url(${destination.image_url})` }}>
             <h2>{destination.name}</h2>
             <p>Country: {destination.country}</p>
             <p>Attractions: {destination.attractions}</p>
         </div>
     );
-    
 }
 
 export default DestinationDetails;
+
 
 export const DestinationList = () => {
     const [destinations, setDestinations] = useState([]);
