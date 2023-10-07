@@ -79,6 +79,16 @@ form button:hover {
 .list-item h3 {
     margin-top: 0;
 }
+.destination-details {
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 
