@@ -83,7 +83,7 @@ form button:hover {
 
 
 .destination-details {
-    height: 100vh; 
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -91,6 +91,24 @@ form button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.destination-details-text {
+    background-color: rgba(255, 255, 255, 0.7); /* semi-transparent white background */
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.destination-details h2, .destination-details p {
+    margin: 10px 0;
+    color: #333; /* Dark text color */
+}
+
+.destination-details h2 {
+    font-size: 28px;
+    font-weight: bold;
 }
 
 
