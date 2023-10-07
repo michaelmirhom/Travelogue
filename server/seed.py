@@ -12,7 +12,7 @@ def seed_data():
     user2 = User(username='janeDoe', email='jane@example.com', password_hash=generate_password_hash('password456'))
 
     
-    dest1 = Destination(name='Giza', country='Egypt', attractions='Pyramids, River Nile')
+    dest1 = Destination(name='Giza', country='Egypt', attractions='Pyramids, River Nile', image_url='https://i.pinimg.com/originals/9d/bb/e8/9dbbe803857060a7f3d17350302c75a4.jpg')
     dest2 = Destination(name='Tokyo', country='Japan', attractions='Tokyo Tower, Senso-ji Temple')
 
     
