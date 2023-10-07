@@ -45,6 +45,7 @@ const DestinationDetails = () => {
             <p>Attractions: {destination.attractions}</p>
         </div>
     );
+    
 }
 
 export default DestinationDetails;
