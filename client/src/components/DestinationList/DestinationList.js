@@ -38,7 +38,7 @@ const DestinationList = () => {
             <h2>Destinations</h2>
             {destinations.map(destination => (
                 <div key={destination.id}>
-                    {/* Wrap the destination name with a Link */}
+                    
                     <h3><Link to={`/destination/${destination.id}`}>{destination.name}</Link></h3>
                     <p>Country: {destination.country}</p>
                     <p>Attractions: {destination.attractions}</p>

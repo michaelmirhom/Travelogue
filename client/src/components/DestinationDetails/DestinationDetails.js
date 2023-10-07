@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
-
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const DestinationDetails = () => {
     const [destination, setDestination] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-
    
     const { id } = useParams();
 
     useEffect(() => {
-        
         fetch(`http://localhost:5555/api/destinations/${id}`)
             .then(response => {
                 if (!response.ok) {
@@ -42,23 +39,22 @@ const DestinationDetails = () => {
     }
 
     return (
-        <div>
+        <div style={{ backgroundImage: `url(${destination.image_url})`, backgroundSize: 'cover', padding: '20px' }}>
             <h2>{destination.name}</h2>
             <p>Country: {destination.country}</p>
             <p>Attractions: {destination.attractions}</p>
-           
         </div>
     );
 }
 
 export default DestinationDetails;
+
 export const DestinationList = () => {
     const [destinations, setDestinations] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        // Fetch destinations from your API
         fetch('http://localhost:5555/api/destinations')
             .then(response => {
                 if (!response.ok) {
@@ -97,6 +93,7 @@ export const DestinationList = () => {
         </div>
     );
 };
+
 
                
              
