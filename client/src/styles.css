@@ -82,7 +82,7 @@ form button:hover {
 }
 
 .destination-details {
-    min-height: 100vh;
+    height: 100%; 
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -90,6 +90,7 @@ form button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: auto; 
 }
 
 
