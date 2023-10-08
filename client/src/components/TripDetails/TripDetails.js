@@ -3,14 +3,14 @@ import { useParams } from 'react-router-dom';
 
 const TripDetails = () => {
     const [trip, setTrip] = useState(null);
-    const [reviews, setReviews] = useState([]);
+    const [reviews, setReviews] = useState([]);  
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const { id } = useParams();
 
-    const [newReviewContent, setNewReviewContent] = useState('');
-    const [newReviewRating, setNewReviewRating] = useState(5);
-
+    const [newReviewContent, setNewReviewContent] = useState(''); 
+    const [newReviewRating, setNewReviewRating] = useState(5); 
+ 
     const handleAddReview = () => {
         fetch('http://localhost:5555/api/reviews', {
             method: 'POST',
@@ -18,13 +18,17 @@ const TripDetails = () => {
             body: JSON.stringify({
                 content: newReviewContent,
                 rating: newReviewRating,
-                user_id: 1,
+                user_id: 1, 
                 trip_id: trip.id
             })
         })
         .then(response => response.json())
         .then(data => {
-            setReviews(prevReviews => [...prevReviews, data]);
+            if (Array.isArray(data)) {
+                setReviews(data);
+            } else {
+                setReviews(prevReviews => [...prevReviews, data]);
+            }
             setNewReviewContent('');
             setNewReviewRating(5);
         });
@@ -42,7 +46,6 @@ const TripDetails = () => {
             })
             .then(response => response.json())
             .then(data => {
-                
                 if (Array.isArray(data)) {
                     setReviews(data);
                 } else {
@@ -103,6 +106,7 @@ const TripDetails = () => {
 }
 
 export default TripDetails;
+
 
 
 
