@@ -66,27 +66,33 @@ const DestinationDetails = () => {
     
     return (
         <div className="destination-details" style={{ backgroundImage: `url(${destination.image_url})` }}>
-            <h2>{destination.name}</h2>
-            <p>Country: {destination.country}</p>
-            <p>Attractions: {destination.attractions}</p>
+            <div className="destination-details-text">
+                <h2>{destination.name}</h2>
+                <p>Country: {destination.country}</p>
+                <p>Attractions: {destination.attractions}</p>
+            </div>
 
-            <h3>Add a Review</h3>
-            <textarea
-                value={newReviewContent}
-                onChange={(e) => setNewReviewContent(e.target.value)}
-                placeholder="Your review"
-            />
-            <select
-                value={newReviewRating}
-                onChange={(e) => setNewReviewRating(Number(e.target.value))}
-            >
-                <option value={5}>5 Stars</option>
-                <option value={4}>4 Stars</option>
-                <option value={3}>3 Stars</option>
-                <option value={2}>2 Stars</option>
-                <option value={1}>1 Star</option>
-            </select>
-            <button onClick={handleAddReview}>Add Review</button>
+            <div className="add-review-section">
+                <h3 className="add-review-title">Add a Review</h3>
+                <textarea
+                    className="add-review-textarea"
+                    value={newReviewContent}
+                    onChange={(e) => setNewReviewContent(e.target.value)}
+                    placeholder="Your review"
+                />
+                <select
+                    className="add-review-select"
+                    value={newReviewRating}
+                    onChange={(e) => setNewReviewRating(Number(e.target.value))}
+                >
+                    <option value={5}>5 Stars</option>
+                    <option value={4}>4 Stars</option>
+                    <option value={3}>3 Stars</option>
+                    <option value={2}>2 Stars</option>
+                    <option value={1}>1 Star</option>
+                </select>
+                <button className="add-review-button" onClick={handleAddReview}>Add Review</button>
+            </div>
         </div>
     );
 }
