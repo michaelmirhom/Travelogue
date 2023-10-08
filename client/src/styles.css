@@ -115,6 +115,77 @@ form button:hover {
     font-weight: bold;
 }
 
+.review-section {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.review-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.review-content {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.review-content p {
+    margin-bottom: 10px;
+}
+
+.review-rating {
+    display: flex;
+    align-items: center;
+}
+
+.review-star {
+    color: gold;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.add-review-section {
+    margin-top: 30px;
+}
+
+.add-review-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.add-review-textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.add-review-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.add-review-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-review-button:hover {
+    background-color: #555;
+}
 
 
 
