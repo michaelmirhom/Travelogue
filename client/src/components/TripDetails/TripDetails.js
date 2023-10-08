@@ -62,6 +62,8 @@ const TripDetails = () => {
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
     if (!trip) return <div>No trip details found.</div>;
+    console.log("Reviews Data:", reviews);
+
 
     return (
         <div className="container">
