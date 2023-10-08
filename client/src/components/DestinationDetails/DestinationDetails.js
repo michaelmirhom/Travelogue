@@ -4,14 +4,15 @@ import { useParams } from 'react-router-dom';
 const DestinationDetails = () => {
     
     const [destination, setDestination] = useState(null);
-    const [reviews, setReviews] = useState([]);  // <-- New state for reviews
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     const { id } = useParams();
 
+   
     const [newReviewContent, setNewReviewContent] = useState('');
     const [newReviewRating, setNewReviewRating] = useState(5);
 
+   
     const handleAddReview = () => {
         fetch('http://localhost:5555/api/reviews', {
             method: 'POST',
@@ -25,11 +26,12 @@ const DestinationDetails = () => {
         })
         .then(response => response.json())
         .then(data => {
-            setReviews(prevReviews => [...prevReviews, data]);  
+            
             setNewReviewContent('');
             setNewReviewRating(5);
         });
     };
+
 
     useEffect(() => {
         fetch(`http://localhost:5555/api/destinations/${id}`)
@@ -41,12 +43,6 @@ const DestinationDetails = () => {
             })
             .then(data => {
                 setDestination(data);
-                
-                return fetch(`http://localhost:5555/api/reviews?destination_id=${id}`);
-            })
-            .then(response => response.json())
-            .then(data => {
-                setReviews(data);
                 setIsLoading(false);
             })
             .catch(err => {
@@ -67,24 +63,13 @@ const DestinationDetails = () => {
         return <div>Destination not found.</div>;
     }
 
+    
     return (
         <div className="destination-details" style={{ backgroundImage: `url(${destination.image_url})` }}>
             <div className="destination-details-text">
                 <h2>{destination.name}</h2>
                 <p>Country: {destination.country}</p>
                 <p>Attractions: {destination.attractions}</p>
-            </div>
-
-            <div className="reviews-section">
-                <h3 className="reviews-title">Reviews</h3>
-                {reviews.map(review => (
-                    <div key={review.id} className="review-content">
-                        <p>{review.content}</p>
-                        <div className="review-rating">
-                            {"★".repeat(review.rating)}
-                        </div>
-                    </div>
-                ))}
             </div>
 
             <div className="add-review-section">
