@@ -43,11 +43,11 @@ Travelogue is a comprehensive web application tailored for travel enthusiasts. T
 * pipenv shell
 * Navigate to the Backtend Directory:
    cd server
-   * Install the Flask_Cors
+   1. Install the Flask_Cors
    pip install flask-cors
-   * set the FLASK_APP environment variable
+   2. set the FLASK_APP environment variable
    export FLASK_APP=app.py
-   flask run --port=5555
+   3. flask run --port=5555
 
 # Frontend Setup 
  1. Navigate to the Frontend Directory:
